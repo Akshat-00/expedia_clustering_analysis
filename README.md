@@ -1,59 +1,94 @@
 # Expedia User Segmentation (Clustering Project)
 
-This project focuses on analyzing and grouping Expedia users based on their travel behavior using unsupervised machine learning techniques. The goal was to identify distinct traveler types by clustering users using K-Means and Agglomerative Clustering.
+This project analyzes and groups Expedia users based on their travel behavior using **unsupervised machine learning**.  
+The goal: identify distinct traveler personas with K-Means and Agglomerative Clustering, and translate insights into business strategies.
 
 ---
 
 ## 📂 Dataset
 
-The dataset used contains anonymized Expedia user interactions, including information about booking status, destination, search dates, and other user-level attributes.
+The dataset contains anonymized Expedia user interactions, including booking status, destination, search dates, and user-level attributes.  
 
-🔗 **Dataset Link:** [https://www.kaggle.com/datasets/jacopoferretti/expedia-travel-dataset]
+🔗 **Dataset Link:** [Expedia Travel Dataset (Kaggle)](https://www.kaggle.com/datasets/jacopoferretti/expedia-travel-dataset)
 
 ---
 
 ## 🧠 Problem Statement
 
-Travel platforms like Expedia have a wide range of users with different preferences and behaviors. By segmenting users based on how they interact with the platform (e.g., how early they book, how long they travel, how far they go), we can build targeted user profiles that help personalize recommendations, improve user experience, and guide marketing strategies.
+Travel platforms like Expedia serve users with vastly different booking habits.  
+By clustering customers based on **trip duration, booking lead time, and travel distance**, we can uncover segments that improve:
+
+- 🎯 Personalized recommendations  
+- 📈 Marketing strategies  
+- 💰 Pricing optimization  
 
 ---
 
 ## 🧰 What This Project Covers
 
-- ✅ Data cleaning, handling of missing values, and type conversions
-- ✅ Feature engineering (`travel_duration`, `days_in_advance`, `booking_ratio`, etc.)
-- ✅ K-Means clustering on the full dataset
-- ✅ Agglomerative clustering on a 40,000-user sample
-- ✅ Dimensionality reduction using PCA for 2D and 3D visualizations
-- ✅ Clustering evaluation using Silhouette Score and Davies-Bouldin Index
-- ✅ Comparative analysis of cluster behavior (duration, distance, booking time)
+- ✅ Data cleaning & handling missing values  
+- ✅ Feature engineering (`travel_duration`, `days_in_advance`, `booking_ratio`, etc.)  
+- ✅ K-Means clustering on full dataset  
+- ✅ Agglomerative clustering on 40,000-user sample  
+- ✅ Dimensionality reduction (PCA) for 2D/3D cluster visualization  
+- ✅ Evaluation with **Silhouette Score** & **Davies-Bouldin Index**  
+- ✅ Business interpretation of clusters  
 
 ---
 
-## 🧾 Summary of Insights
+## 📊 Results & Insights
 
-The project revealed four clear user segments:
+The analysis revealed **four clear traveler segments**:
 
-- **Early Planners:** Book well in advance, travel to nearby places
-- **Balanced Family Travelers:** Plan moderately, travel mid to long distances
-- **Long-Haul Explorers:** Travel the farthest and stay the longest
-- **Last-Minute Travelers:** Book close to departure, short trips and nearby destinations
+- **Early Planners** → book well in advance, shorter trips, nearby destinations  
+- **Balanced Family Travelers** → moderate planning, mid/long distances  
+- **Long-Haul Explorers** → longest trips, farthest destinations  
+- **Last-Minute Travelers** → short, nearby trips booked close to departure  
 
-These segments were found consistently across both clustering techniques, with K-Means offering slightly better performance due to full-data access.
+**Evaluation Metrics:**  
+- **K-Means (full dataset):** Silhouette = **0.4401**, Davies-Bouldin = **1.0662**  
+- **Agglomerative (40K sample):** Silhouette = **0.4303**, Davies-Bouldin = **1.0987**  
 
----
-
-## 🛠️ Tools Used
-
-- Python (Pandas, NumPy, Scikit-learn)
-- Seaborn & Matplotlib for visualization
-- PCA for dimensionality reduction
-- Silhouette & Davies-Bouldin Index for cluster evaluation
+👉 K-Means performed slightly better, producing more stable clusters.
 
 ---
 
-## 📌 Conclusion
+## 📈 Visualizations
 
-This project demonstrates how behavioral clustering can be used to uncover user personas in a travel platform. These insights can be used for personalization, improved customer engagement, and targeted marketing strategies.
+### PCA (2D Representation)
+![PCA Clusters](Expedia_clustering/images/PCA_2D_KMeans.png)
+
+### PCA (3D Representation)
+![3D Clusters](Expedia_clustering/images/PCA_3D_KMeans.png)
+
+### Segmented Customers (Types of Personas)
+![KMeans_Clusters](Expedia_clustering/images/KMeans_clusters.png)
 
 ---
+
+
+## 🛠️ Tools & Libraries
+
+- **Python**: Pandas, NumPy, Scikit-learn  
+- **Visualization**: Matplotlib, Seaborn  
+- **Dimensionality Reduction**: PCA  
+- **Clustering**: K-Means, Agglomerative Clustering  
+- **Evaluation**: Silhouette Score, Davies-Bouldin Index  
+
+---
+
+## 🚀 How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Akshat-00/expedia_clustering_analysis.git
+   cd expedia_clustering_analysis
+2. Install dependencies
+   ```bash
+   pip install -r requirements.txt
+3. Launch Jupyter Notebook
+   ```bash
+   jupyter notebook Expedia_cluster_analysis.ipynb
+   
+   
+
